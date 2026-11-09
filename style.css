@@ -61,6 +61,7 @@ nav a:hover { color: var(--text); }
     font-size: 13px;
   }
   .hide-sm { display: none; }
+  .wrap { padding-left: 22px; padding-right: 22px; }
 }
 
 /* トップ */
@@ -120,7 +121,9 @@ nav a:hover { color: var(--text); }
 
 /* 文章のページ */
 .doc {
-  padding: 40px 0 64px;
+  /* 上下だけ指定する（左右の余白は .wrap のものを使う。0 にすると、スマホで文字が画面の端にくっつく） */
+  padding-top: 40px;
+  padding-bottom: 64px;
 }
 .doc h1 {
   font-size: 26px;
