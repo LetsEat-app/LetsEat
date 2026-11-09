@@ -1,0 +1,175 @@
+/* LetsEat のサイト。アプリと同じく白黒が基本 */
+:root {
+  --bg: #ffffff;
+  --text: #111214;
+  --sub: #6b6e75;
+  --line: #e6e6e3;
+  --card: #f5f5f3;
+  --button: #111214;
+  --button-text: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111214;
+    --text: #f2f2f0;
+    --sub: #9a9da3;
+    --line: #2a2b30;
+    --card: #1c1d21;
+    --button: #f2f2f0;
+    --button-text: #111214;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.8;
+  -webkit-text-size-adjust: 100%;
+}
+
+a { color: inherit; }
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 上の帯 */
+header {
+  border-bottom: 1px solid var(--line);
+}
+header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+.logo {
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+nav a {
+  margin-left: 16px;
+  font-size: 14px;
+  color: var(--sub);
+  text-decoration: none;
+}
+nav a:hover { color: var(--text); }
+
+/* トップ */
+.hero {
+  text-align: center;
+  padding: 56px 0 40px;
+}
+.hero img {
+  width: 220px;
+  height: 220px;
+}
+.hero h1 {
+  font-size: 30px;
+  line-height: 1.4;
+  margin: 24px 0 12px;
+}
+.hero p {
+  color: var(--sub);
+  margin: 0 0 28px;
+}
+.button {
+  display: inline-block;
+  background: var(--button);
+  color: var(--button-text);
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.button.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.features {
+  display: grid;
+  gap: 12px;
+  padding: 8px 0 56px;
+}
+.feature {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 20px 22px;
+}
+.feature h2 {
+  font-size: 17px;
+  margin: 0 0 4px;
+}
+.feature p {
+  margin: 0;
+  color: var(--sub);
+  font-size: 15px;
+}
+
+/* 文章のページ */
+.doc {
+  padding: 40px 0 64px;
+}
+.doc h1 {
+  font-size: 26px;
+  margin: 0 0 4px;
+}
+.doc .updated {
+  color: var(--sub);
+  font-size: 14px;
+  margin: 0 0 32px;
+}
+.doc h2 {
+  font-size: 18px;
+  margin: 36px 0 8px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.doc h3 {
+  font-size: 16px;
+  margin: 20px 0 4px;
+}
+.doc ul {
+  padding-left: 1.2em;
+}
+.doc li {
+  margin: 4px 0;
+}
+
+/* よくある質問 */
+details {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 14px 18px;
+  margin: 10px 0;
+}
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+details p {
+  margin: 10px 0 2px;
+  color: var(--sub);
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  color: var(--sub);
+  font-size: 13px;
+}
+footer .wrap {
+  padding-top: 20px;
+  padding-bottom: 32px;
+}
+footer a {
+  margin-right: 16px;
+}
