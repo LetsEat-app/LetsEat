@@ -1,23 +1,13 @@
-/* LetsEat のサイト。アプリと同じく白黒が基本 */
+/* LetsEat のサイト。iPhone の明るさの設定に関係なく、いつも黒が基本 */
 :root {
-  --bg: #ffffff;
-  --text: #111214;
-  --sub: #6b6e75;
-  --line: #e6e6e3;
-  --card: #f5f5f3;
-  --button: #111214;
-  --button-text: #ffffff;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #111214;
-    --text: #f2f2f0;
-    --sub: #9a9da3;
-    --line: #2a2b30;
-    --card: #1c1d21;
-    --button: #f2f2f0;
-    --button-text: #111214;
-  }
+  color-scheme: dark;
+  --bg: #111214;
+  --text: #f2f2f0;
+  --sub: #9a9da3;
+  --line: #2a2b30;
+  --card: #1c1d21;
+  --button: #f2f2f0;
+  --button-text: #111214;
 }
 
 * { box-sizing: border-box; }
@@ -63,14 +53,27 @@ nav a {
 }
 nav a:hover { color: var(--text); }
 
+/* スマホの幅では、上の帯の文字を小さく、間を詰め、「プライバシーポリシー」を「プライバシー」と短くする */
+@media (max-width: 480px) {
+  .logo { font-size: 20px; }
+  nav a {
+    margin-left: 12px;
+    font-size: 13px;
+  }
+  .hide-sm { display: none; }
+}
+
 /* トップ */
 .hero {
   text-align: center;
   padding: 56px 0 40px;
 }
-.hero img {
-  width: 220px;
-  height: 220px;
+/* アプリのアイコン（白地）を、ホーム画面と同じ角丸で出す。黒い背景でもカプセルが沈まない */
+.hero img.app-icon {
+  width: 200px;
+  height: 200px;
+  border-radius: 22.5%;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
 }
 .hero h1 {
   font-size: 30px;
